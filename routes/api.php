@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/channel', [\App\Http\Controllers\ChannelController::class, 'list']);
+Route::get('/channel/{channel}/{date}/timezone/{timezone}', [\App\Http\Controllers\ProgrammeController::class, 'list']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
